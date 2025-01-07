@@ -64,6 +64,13 @@ public class AlgorithmTest {
         assertEquals(0, Algorithm.binarySearch(arr, 3)); // Mảng 1 phần tử, tìm thấy
         assertEquals(-1, Algorithm.binarySearch(arr, 4)); // Mảng 1 phần tử, không tìm thấy
     }
+    @Test
+    void testBinarySearch_TargetSmallerThanMid() {
+        int[] arr = {1, 2, 3, 4, 5};
+        assertEquals(0, Algorithm.binarySearch(arr, 1)); // Giá trị nhỏ hơn mid, đi vào nhánh `else right = mid - 1`
+        assertEquals(1, Algorithm.binarySearch(arr, 2)); // Giá trị nhỏ hơn mid, đi vào nhánh `else right = mid - 1`
+    }
+
 
     // Unit test cho hàm factorial
     @Test
